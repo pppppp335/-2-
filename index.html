@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人專案展演空間</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <header class="navbar">
+        <div class="logo">🚀 My Portfolio</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#projects">大學專案</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主視覺區塊 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">Creator</span></h1>
+            <p>探索程式、創意與無限可能的大學四年軌跡 (ง๑ •̀_•́)ง</p>
+            <a href="#projects" class="btn">查看專案作品</a>
+        </div>
+    </section>
+
+    <!-- 關於我區塊 -->
+    <section id="about" class="section">
+        <h2 class="section-title">關於我</h2>
+        <div class="about-card">
+            <p>這裡可以放你的個人簡介、主修領域、喜歡的技術或座右銘。保持神祕又帶點專業感！(๑¯∀¯๑)</p>
+        </div>
+    </section>
+
+    <!-- 大學四年專案區塊 -->
+    <section id="projects" class="section">
+        <h2 class="section-title">大學四年專案</h2>
+        
+        <!-- 年級篩選按鈕 -->
+        <div class="filter-btns">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="freshman">大一</button>
+            <button class="filter-btn" data-filter="sophomore">大二</button>
+            <button class="filter-btn" data-filter="junior">大三</button>
+            <button class="filter-btn" data-filter="senior">大四</button>
+        </div>
+
+        <!-- 專案卡片網格 -->
+        <div class="project-grid">
+            <!-- 專案 1 (大一) -->
+            <div class="project-card" data-category="freshman">
+                <div class="project-info">
+                    <span class="badge freshman">大一</span>
+                    <h3>專案名稱一：基礎程式實作</h3>
+                    <p>這是大一時期做的期末專案，使用了基礎邏輯與演算法來解決特定問題。</p>
+                    <a href="https://github.com/你的帳號/你的專案" target="_blank" class="project-link">GitHub 連結 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 專案 2 (大二) -->
+            <div class="project-card" data-category="sophomore">
+                <div class="project-info">
+                    <span class="badge sophomore">大二</span>
+                    <h3>專案名稱二：資料結構與網頁開發</h3>
+                    <p>大二時結合了資料結構概念所實作的小工具與介面。</p>
+                    <a href="https://github.com/你的帳號/你的專案" target="_blank" class="project-link">GitHub 連結 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 專案 3 (大三) -->
+            <div class="project-card" data-category="junior">
+                <div class="project-info">
+                    <span class="badge junior">大三</span>
+                    <h3>專案名稱三：進階系統整合</h3>
+                    <p>大三核心專案，著重於系統架構、效能優化與團隊合作。</p>
+                    <a href="https://github.com/你的帳號/你的專案" target="_blank" class="project-link">GitHub 連結 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 專案 4 (大四) -->
+            <div class="project-card" data-category="senior">
+                <div class="project-info">
+                    <span class="badge senior">大四</span>
+                    <h3>專案名稱四：畢業專題 / 綜合應用</h3>
+                    <p>大學生涯的集大成之作，整合前後端與實際應用的完整作品。</p>
+                    <a href="https://github.com/你的帳號/你的專案" target="_blank" class="project-link">GitHub 連結 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡方式區塊 -->
+    <section id="contact" class="section dark-bg">
+        <h2 class="section-title">聯絡方式</h2>
+        <p>對我的專案有興趣或想交流？歡迎透過以下方式找到我！ (ゝω・)</p>
+        <div class="contact-links">
+            <a href="mailto:your.email@example.com" class="contact-btn">Email Me</a>
+            <a href="https://github.com/你的帳號" target="_blank" class="contact-btn">GitHub</a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>&copy; 2026 My Portfolio. Designed with HTML/CSS/JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
