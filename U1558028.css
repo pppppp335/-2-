@@ -1,0 +1,68 @@
+/* 全域與頁面排版 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 1000px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 圖片藝廊網格排版 */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 圖片外框超連結 */
+.img-link {
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 圖片基本樣式 */
+.img-link img {
+    display: block;
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* 定義抖動動畫 (Keyframes) */
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-3px, 2px) rotate(-2deg); }
+    40% { transform: translate(3px, -2px) rotate(2deg); }
+    60% { transform: translate(-2px, -1px) rotate(-1deg); }
+    80% { transform: translate(2px, 2px) rotate(1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* 滑鼠移至圖片超連結時套用抖動動畫與陰影效果 */
+.img-link:hover {
+    animation: shake 0.4s ease infinite;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
