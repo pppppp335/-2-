@@ -1,0 +1,252 @@
+/* ==============================
+   全域設定 (Global Reset & Styles)
+   ============================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Hiragino Sans GB", "Heiti SC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    color: #555;
+    /* 莫蘭迪色系背景底色 (淺灰白) */
+    background-color: #f8f9fa; 
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==============================
+   頁首 (Header) 與導覽 (Nav)
+   ============================== */
+header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* 釘選在頂部 */
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c757d; /* 莫蘭迪灰藍色 Logo 字 */
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    font-size: 0.9rem;
+    color: #6c757d;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #a1aeb3; /* 懸停時變淺一點的莫蘭迪色 */
+}
+
+/* ==============================
+   主要內容區 (Main)
+   ============================== */
+
+/* 主視覺區 (Hero) */
+.hero {
+    /* 莫蘭迪色系背景 (灰藍色調) */
+    background-color: #e0e4e6; 
+    color: #6c757d;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    /* 莫蘭迪色按鈕 (灰綠色調) */
+    background-color: #8b9fa7; 
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #778d96;
+}
+
+/* 商品網格區 (Product Grid) */
+.product-grid {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.product-grid h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 使用 Flexbox 排列商品卡片 */
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem; /* 卡片間距 (手機單欄時適用) */
+    display: flex;
+    flex-direction: column; /* 預設垂直排列 */
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px; /* 固定圖片高度，確保版面整齊 */
+    object-fit: cover; /* 圖片填滿不變形 */
+}
+
+.product-info {
+    padding: 1.5rem;
+    flex-grow: 1; /* 讓資訊區填滿剩餘空間 */
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #a1aeb3; /* 莫蘭迪灰藍色標價 */
+    margin-bottom: 0.5rem;
+}
+
+.specs {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* 讓描述區把剩餘空間推擠掉，確保按鈕對齊 */
+}
+
+.more-info-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #8b9fa7;
+    border-bottom: 1px solid #8b9fa7; /* 加上底線強調連結 */
+    margin-top: 1rem;
+}
+
+/* 資訊區塊 (配送與 FAQ) */
+.info-section {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.info-section h2 {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+.content-block p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* 教學用途聲明區 */
+.disclaimer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #adb5bd;
+    background-color: #f1f3f5;
+}
+
+/* ==============================
+   頁尾 (Footer)
+   ============================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #6c757d; /* 莫蘭迪灰藍色頁尾 */
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* ==============================
+   RWD 響應式設計 (Responsive Design)
+   ============================== */
+
+/* 當螢幕寬度大於 768px (平板與桌面) */
+@media (min-width: 768px) {
+    /* 將商品改為三欄並排顯示 */
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .product-card {
+        flex: 1 1 calc(33.33% - 1.33rem); /* 三等分並排 */
+        margin-bottom: 0; /* 取消垂直間距 */
+    }
+}
+
+/* 強制確保 390px 寬度下無水平捲動 (驗收標準) */
+@media (max-width: 390px) {
+    header, .product-grid, .info-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+}
