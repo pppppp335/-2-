@@ -1,0 +1,160 @@
+/* style.css - 海豹實驗室電商網站樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+}
+
+body {
+    background-color: #fcf8f2;
+    color: #4a403a;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #e8dcca, #d4c5b9);
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 4px dashed #b5a495;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #3b302a;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #6b5c53;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 購物須知區塊 */
+.notice-box {
+    background: #fff8f0;
+    border: 2px solid #e6d2bc;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(181, 164, 149, 0.1);
+}
+
+.notice-box h3 {
+    color: #3b302a;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.notice-box ul {
+    padding-left: 20px;
+    color: #6b5c53;
+}
+
+.notice-box li {
+    margin-bottom: 6px;
+}
+
+/* 產品卡片區塊 */
+.series-section {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(181, 164, 149, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    align-items: center;
+    border: 2px solid #f0e6de;
+}
+
+/* 放大圖片容器與排版 */
+.series-images {
+    flex: 1.2;
+    min-width: 350px;
+    display: flex;
+    gap: 15px;
+}
+
+.series-images img {
+    width: 50%;
+    height: 320px; /* 固定高度讓圖片更大更清晰 */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    border: 1px solid #e0d4cc;
+    transition: transform 0.3s ease;
+}
+
+.series-images img:hover {
+    transform: scale(1.03); /* 滑鼠懸停時微幅放大 */
+}
+
+.series-content {
+    flex: 1.5;
+    min-width: 320px;
+}
+
+.series-content h2 {
+    font-size: 1.8rem;
+    color: #2c2420;
+    margin-bottom: 15px;
+    border-left: 5px solid #d4a373;
+    padding-left: 12px;
+}
+
+.series-content p {
+    color: #7a6b63;
+    margin-bottom: 15px;
+}
+
+.item-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.item-list li {
+    background: #fdfbf7;
+    margin-bottom: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 3px solid #b5a495;
+    font-size: 0.95rem;
+}
+
+.item-list li strong {
+    color: #3b302a;
+}
+
+/* 購買按鈕樣式 */
+.buy-btn {
+    display: inline-block;
+    background: #d4a373;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.buy-btn:hover {
+    background: #bc8a5b;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #3b302a;
+    color: #fcf8f2;
+    margin-top: 50px;
+}
