@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海豹實驗室：今天也是一灘海豹 - 官方盲盒專賣店</title>
+    <style>
+        /* CSS 樣式設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+        }
+
+        body {
+            background-color: #fcf8f2;
+            color: #4a403a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e8dcca, #d4c5b9);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 4px dashed #b5a495;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #3b302a;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #6b5c53;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 購物須知區塊 */
+        .notice-box {
+            background: #fff8f0;
+            border: 2px solid #e6d2bc;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(181, 164, 149, 0.1);
+        }
+
+        .notice-box h3 {
+            color: #3b302a;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .notice-box ul {
+            padding-left: 20px;
+            color: #6b5c53;
+        }
+
+        .notice-box li {
+            margin-bottom: 6px;
+        }
+
+        /* 產品卡片區塊 */
+        .series-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(181, 164, 149, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            align-items: center;
+            border: 2px solid #f0e6de;
+        }
+
+        /* 放大圖片容器與排版 */
+        .series-images {
+            flex: 1.2;
+            min-width: 350px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .series-images img {
+            width: 50%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            border: 1px solid #e0d4cc;
+            transition: transform 0.3s ease;
+        }
+
+        .series-images img:hover {
+            transform: scale(1.03);
+        }
+
+        .series-content {
+            flex: 1.5;
+            min-width: 320px;
+        }
+
+        .series-content h2 {
+            font-size: 1.8rem;
+            color: #2c2420;
+            margin-bottom: 15px;
+            border-left: 5px solid #d4a373;
+            padding-left: 12px;
+        }
+
+        .series-content p {
+            color: #7a6b63;
+            margin-bottom: 15px;
+        }
+
+        .item-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .item-list li {
+            background: #fdfbf7;
+            margin-bottom: 8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border-left: 3px solid #b5a495;
+            font-size: 0.95rem;
+        }
+
+        .item-list li strong {
+            color: #3b302a;
+        }
+
+        /* 加入購物車按鈕 */
+        .buy-btn {
+            display: inline-block;
+            background: #d4a373;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .buy-btn:hover {
+            background: #bc8a5b;
+            transform: translateY(-2px);
+        }
+
+        .buy-btn:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #3b302a;
+            color: #fcf8f2;
+            margin-top: 50px;
+        }
+
+        /* 💸 鈔票雨動畫容器與動態元素 */
+        #money-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* 讓鈔票不干擾網頁點擊 */
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .money {
+            position: absolute;
+            top: -50px;
+            font-size: 2.5rem;
+            user-select: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(720deg) scale(1.2);
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 鈔票特效容器 -->
+    <div id="money-container"></div>
+
+    <header>
+        <h1>🌊 海豹實驗室</h1>
+        <p>「今天也是一灘海豹：躺平、耍廢、療癒你的每一天」✨</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 購物須知區塊 -->
+        <div class="notice-box">
+            <h3>📦 官方盲盒購物與抽獎須知 (Shopping Notice)</h3>
+            <ul>
+                <li><strong>盲盒規則</strong>：一整套包含常規款與隨機隱藏款。隨機單盒有機率抽中隱藏款，若幸運抽中隱藏款將會隨機替代其中一款常規款。</li>
+                <li><strong>材質安全</strong>：全系列採用環保高級PVC與搪膠材質，通過安全檢驗，請安心把軟爛海豹帶回家。</li>
+                <li><strong>出貨說明</strong>：現貨商品將於下單後 3 個工作天內依序寄出；預購商品請參閱各活動頁面說明。</li>
+            </ul>
+        </div>
+
+        <!-- 第一彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/01.jpg" alt="第一彈外包裝">
+                <img src="images/products/01.jpg" alt="第一彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第一彈】經典日常廢人系列</h2>
+                <p><strong>特色</strong>：完美捕捉現代社畜與學生的日常軟爛精髓，手感厚實療癒。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-101</code> <strong>賴床賴到天荒地老海豹</strong>：裹著厚重的棉花被，眼神死不肯起床。</li>
+                    <li><code>SEAL-102</code> <strong>珍奶喝到一半吸管斷掉海豹</strong>：拿著珍奶眼神震驚，世界崩塌。</li>
+                    <li><code>SEAL-109 (隱藏版)</code> <strong>極光幻彩黃金海豹</strong>：終極閃耀夢幻隱藏版！</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第一彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第二彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/02.jpg" alt="第二彈外包裝">
+                <img src="images/products/02.jpg" alt="第二彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第二彈】辦公室摸魚打混系列</h2>
+                <p><strong>特色</strong>：專為上班族與考生設計的職場生存微小確幸。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-201</code> <strong>上班偷吃零食被抓包海豹</strong>：嘴裡塞滿餅乾，一臉心虛。</li>
+                    <li><code>SEAL-202</code> <strong>Excel當機眼神死海豹</strong>：對著螢幕靈魂已經飄走。</li>
+                    <li><code>SEAL-209 (隱藏版)</code> <strong>鑽石流沙水晶海豹</strong>：散發耀眼光芒的傳說隱藏款。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第二彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第三彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/03.jpg" alt="第三彈外包裝">
+                <img src="images/products/03.jpg" alt="第三彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第三彈】夏日海灘度假系列</h2>
+                <p><strong>特色</strong>：把海豹丟回海裡，結果牠們還是選擇躺在沙灘上不動。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-301</code> <strong>防曬乳沒推開海豹</strong>：背上頂著一坨白色防曬。</li>
+                    <li><code>SEAL-302</code> <strong>椰子樹下睡午覺海豹</strong>：嘴裡叼著吸管帽。</li>
+                    <li><code>SEAL-309 (隱藏版)</code> <strong>深海琉璃珍珠海豹</strong>：夢幻半透明寶石質感。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第三彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第四彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/04.jpg" alt="第四彈外包裝">
+                <img src="images/products/04.jpg" alt="第四彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第四彈】深夜食堂宵夜系列</h2>
+                <p><strong>特色</strong>：深夜肚子餓的罪惡感與極致滿足交織。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-401</code> <strong>半夜偷煮泡麵海豹</strong>：頭頂蔥花一臉幸福。</li>
+                    <li><code>SEAL-402</code> <strong>鹹酥雞加辣海豹</strong>：抱著大紙袋超滿足。</li>
+                    <li><code>SEAL-409 (隱藏版)</code> <strong>黃金流星限定海豹</strong>：閃爍金黃光芒。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第四彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第五彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/05.jpg" alt="第五彈外包裝">
+                <img src="images/products/05.jpg" alt="第五彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第五彈】冬季保暖禦寒系列</h2>
+                <p><strong>特色</strong>：寒流來襲時，海豹化身為各種毛茸茸的保暖小物。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-501</code> <strong>暖爐旁烤麻糬海豹</strong>：整隻融化在暖爐前。</li>
+                    <li><code>SEAL-502</code> <strong>包成春捲的棉被海豹</strong>：隻身捲在被窩裡。</li>
+                    <li><code>SEAL-509 (隱藏版)</code> <strong>極地冰晶雪花海豹</strong>：透明冰晶特效。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第五彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第六彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/06.jpg" alt="第六彈外包裝">
+                <img src="images/products/06.jpg" alt="第六彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第六彈】居家宅度假系列</h2>
+                <p><strong>特色</strong>：宅在家也能環遊世界的搞笑日常。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-601</code> <strong>追劇零食永無止盡海豹</strong>：陷在懶骨頭沙發裡。</li>
+                    <li><code>SEAL-602</code> <strong>假裝自己是一盆植物海豹</strong>：頭頂長出小嫩芽。</li>
+                    <li><code>SEAL-609 (隱藏版)</code> <strong>奇幻極光銀河漫遊海豹</strong>：極光綠與星空紫漸層。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第六彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第七彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/07.jpg" alt="第七彈外包裝">
+                <img src="images/products/07.jpg" alt="第七彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第七彈】大自然微冒險系列</h2>
+                <p><strong>特色</strong>：戶外探索與極致軟爛的反差萌。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-701</code> <strong>高山露營營火烤棉花糖海豹</strong>：專注烤著棉花糖。</li>
+                    <li><code>SEAL-702</code> <strong>森林探險迷路小導遊海豹</strong>：拿著完全沒用的指南針。</li>
+                    <li><code>SEAL-709 (隱藏版)</code> <strong>深海傳說琉璃水晶鯨魚海豹</strong>：封存整片星空。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第七彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第八彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/08.jpg" alt="第八彈外包裝">
+                <img src="images/products/08.jpg" alt="第八彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第八彈】宇宙終極漫遊與神話系列</h2>
+                <p><strong>特色</strong>：跨越時空的奇幻元素與極致柔軟的身軀。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-801</code> <strong>太空漫遊零重力漂浮海豹</strong>：太空裝大字型躺平。</li>
+                    <li><code>SEAL-802</code> <strong>魔法學院占星術士海豹</strong>：水晶球裡想著宵夜。</li>
+                    <li><code>SEAL-809 (隱藏版)</code> <strong>時空之鑰・創世神話黃金海豹</strong>：純金與珍珠白電鍍。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第八彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第九彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/09.jpg" alt="第九彈外包裝">
+                <img src="images/products/09.jpg" alt="第九彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第九彈】多重宇宙摸魚大師系列</h2>
+                <p><strong>特色</strong>：現代打工人的血淚心聲與跨次元放假。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-901</code> <strong>量子力學我疊加了我自己海豹</strong>：肉體上班靈魂躺平。</li>
+                    <li><code>SEAL-902</code> <strong>元宇宙虛擬實境逃避現實海豹</strong>：戴著VR打混。</li>
+                    <li><code>SEAL-909 (隱藏版)</code> <strong>海豹實驗室・終極創世主極光海豹</strong>：七彩霓虹變色偏光。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第九彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+        <!-- 第十彈 -->
+        <section class="series-section">
+            <div class="series-images">
+                <img src="images/10.jpg" alt="第十彈外包裝">
+                <img src="images/products/10.jpg" alt="第十彈產品內容圖">
+            </div>
+            <div class="series-content">
+                <h2>【今天也是一灘海豹・第十彈】宇宙退休老幹部系列</h2>
+                <p><strong>特色</strong>：十全十美大結局！溫感變色與古銅金屬質感。</p>
+                <ul class="item-list">
+                    <li><code>SEAL-1001</code> <strong>公園大爺雙手交疊曬太陽海豹</strong>：挺著肚子躺長椅。</li>
+                    <li><code>SEAL-1002</code> <strong>提早三十年過退休生活海豹</strong>：拿羽毛扇搖椅晃動。</li>
+                    <li><code>SEAL-1009 (隱藏版)</code> <strong>宇宙盡頭無所事事神獸海豹</strong>：流沙星空夜光銀。</li>
+                </ul>
+                <button class="buy-btn" onclick="triggerMoneyRain('第十彈')">🛒 加入購物車 NT$ 320</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 海豹實驗室 (Seal Laboratory) All Rights Reserved. 今天也是一灘海豹系列盲盒。</p>
+    </footer>
+
+    <!-- JavaScript 特效腳本 -->
+    <script>
+        function triggerMoneyRain(seriesName) {
+            const container = document.getElementById('money-container');
+            const moneyIcons = ['💵', '💸', '💰', '🤑', '💳', '✨'];
+            const moneyCount = 50; // 產生 50 個鈔票/金幣元素
+
+            for (let i = 0; i < moneyCount; i++) {
+                const money = document.createElement('div');
+                money.classList.add('money');
+                
+                // 隨機選擇符號
+                money.innerText = moneyIcons[Math.floor(Math.random() * moneyIcons.length)];
+                
+                // 隨機水平位置、動畫時間、延遲時間與尺寸
+                money.style.left = Math.random() * 100 + 'vw';
+                money.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+                money.style.animationDelay = (Math.random() * 0.8) + 's';
+                money.style.fontSize = (Math.random() * 1.5 + 2) + 'rem';
+
+                container.appendChild(money);
+
+                // 動態結束後自動移除元素，維持效能
+                setTimeout(() => {
+                    money.remove();
+                }, 4000);
+            }
+
+            // 提示訊息
+            setTimeout(() => {
+                alert(`🎉 成功將【海豹實驗室 - ${seriesName}】加入購物車！`);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
